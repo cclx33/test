@@ -103,11 +103,11 @@ function setlevel()
   moves=0;
   miniSteps=Math.floor((L-1)/100)+3;
 
-  info="第 "+L+" 關 <br>最少步數: "+miniSteps;
+  info="第"+L+"關  限步:"+miniSteps;
   document.getElementById("label2").innerHTML=info;
   clearInterval(timer2); // 停止 timer2
   cnt=0;
-  document.getElementById("label3").innerHTML="經過 "+cnt+" 秒";
+  document.getElementById("label3").innerHTML="經過"+cnt+"秒";
   // 啟動 timer2 間隔=1000 毫秒
   timer2=setInterval("com2()",1000);
 }
@@ -159,17 +159,17 @@ function move(xa,ya)
       else putPic(x,y,0);
 
       moves++;
-      var info1=" <br>你走了 "+moves+" 步";
-      document.getElementById("label2").innerHTML=info+info1;
+      var info1="經過"+cnt+"秒  你走了"+moves+"步";
+      document.getElementById("label3").innerHTML=info1;
     }
   }
 
   if (map[3+7*3]==1)
   {
-    info1 += " <br>恭喜 過關了!";
-    document.getElementById("label2").innerHTML=info+info1;
+    info += " 恭喜 過關了!";
+    document.getElementById("label2").innerHTML=info;
     clearInterval(timer2); // 停止 timer2
-    delay(8);
+    if (moves<=miniSteps) delay(10);
   }
 }
 
@@ -197,5 +197,5 @@ function com()
 function com2()
 {
   cnt++;
-  document.getElementById("label3").innerHTML="經過 "+cnt+" 秒";
+  document.getElementById("label3").innerHTML="經過"+cnt+"秒  你走了"+moves+"步";
 }

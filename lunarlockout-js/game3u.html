@@ -8,70 +8,69 @@
   </script>
  </head>
  <body>
+ 
+  <div id="label2" style="background-color:#ffaaaa; position:absolute; top:1px; left:1px; width:190; height:25">
+  </div>
+  <div id="label3" style="background-color:#aaffaa; position:absolute; top:26px; left:1px; width:190; height:25">
+  </div>
+
+  <div id="picfield" style="position:absolute; top:26px; left:1px" width:190; height:190">
+   <img id='pic11' src='0.png' style='position:absolute; top:26px; left:1px'/>
+   <img id='pic21' src='0.png' style='position:absolute; top:26px; left:39px'/>
+   <img id='pic31' src='0.png' style='position:absolute; top:26px; left:77px'/>
+   <img id='pic41' src='0.png' style='position:absolute; top:26px; left:115px'/>
+   <img id='pic51' src='0.png' style='position:absolute; top:26px; left:153px'/>
+   <img id='pic12' src='0.png' style='position:absolute; top:64px; left:1px'/>
+   <img id='pic22' src='0.png' style='position:absolute; top:64px; left:39px'/>
+   <img id='pic32' src='0.png' style='position:absolute; top:64px; left:77px'/>
+   <img id='pic42' src='0.png' style='position:absolute; top:64px; left:115px'/>
+   <img id='pic52' src='0.png' style='position:absolute; top:64px; left:153px'/>
+   <img id='pic13' src='0.png' style='position:absolute; top:102px; left:1px'/>
+   <img id='pic23' src='0.png' style='position:absolute; top:102px; left:39px'/>
+   <img id='pic33' src='7.png' style='position:absolute; top:102px; left:77px'/>
+   <img id='pic43' src='0.png' style='position:absolute; top:102px; left:115px'/>
+   <img id='pic53' src='0.png' style='position:absolute; top:102px; left:153px'/>
+   <img id='pic14' src='0.png' style='position:absolute; top:140px; left:1px'/>
+   <img id='pic24' src='0.png' style='position:absolute; top:140px; left:39px'/>
+   <img id='pic34' src='0.png' style='position:absolute; top:140px; left:77px'/>
+   <img id='pic44' src='0.png' style='position:absolute; top:140px; left:115px'/>
+   <img id='pic54' src='0.png' style='position:absolute; top:140px; left:153px'/>
+   <img id='pic15' src='0.png' style='position:absolute; top:178px; left:1px'/>
+   <img id='pic25' src='0.png' style='position:absolute; top:178px; left:39px'/>
+   <img id='pic35' src='0.png' style='position:absolute; top:178px; left:77px'/>
+   <img id='pic45' src='0.png' style='position:absolute; top:178px; left:115px'/>
+   <img id='pic55' src='0.png' style='position:absolute; top:178px; left:153px'/>
+  </div>
+
   <form method="get" action="" id="demo18" name="demo18">
-   <table>
+   <table style="position:absolute; top:240px; left:1px">
     <tr height=35>
      <td>
-      <input type="button" name="sub2" value="重玩A" onclick="gotoLevel(0)"/>
-      <input type="button" name="sub3" value="上一關B" onclick="gotoLevel(-1)"/>
-      <input type="button" name="sub4" value="下一關N" onclick="gotoLevel(1)"/>
-      <input type="button" name="sub5" value="選關S" onclick="gotoLevel(2)"/>
-     </td>
-     <td>....</td>
-     <td/>
-     <td>
+      <input type="button" name="sub3" value="前關" onclick="gotoLevel(-1)"/>
       <input type="button" name="sub6" value="上 I" onclick="move(0,-1)"/>
+      <input type="button" name="sub4" value="後關" onclick="gotoLevel(1)"/>
+      <input type="button" name="num1" value="[X]" onclick="player=1"/>
+      <input type="button" name="num2" value="[2]" onclick="player=2"/>
      </td>
-     <td/>
     </tr>
     <tr>
      <td>
-      <input type="button" name="num1" value="1=[X]" onclick="player=1"/>
-      <input type="button" name="num2" value="[2]" onclick="player=2"/>
+      <input type="button" name="sub7" value="左 J" onclick="move(-1,0)"/>
+      <input type="button" name="sub8" value="下 K" onclick="move(0,1)"/>
+      <input type="button" name="sub9" value="右 L" onclick="move(1,0)"/>
       <input type="button" name="num3" value="[3]" onclick="player=3"/>
       <input type="button" name="num4" value="[4]" onclick="player=4"/>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <input type="button" name="sub2" value=" 重玩 A " onclick="gotoLevel(0)"/>
+      <input type="button" name="sub5" value=" 選關 S " onclick="gotoLevel(2)"/>
       <input type="button" name="num5" value="[5]" onclick="player=5"/>
       <input type="button" name="num6" value="[6]" onclick="player=6"/>
      </td>
-     <td>....</td>
-     <td><input type="button" name="sub7" value="左 J" onclick="move(-1,0)"/></td>
-     <td><input type="button" name="sub8" value="下 K" onclick="move(0,1)"/></td>
-     <td><input type="button" name="sub9" value="右 L" onclick="move(1,0)"/></td>
     </tr>
    </table>
   </form>
-
-  <div id="picfield">
-   <img id="pic11" src="0.png" style="position:absolute; top:88px; left:38px"/>
-   <img id="pic21" src="0.png" style="position:absolute; top:88px; left:76px"/>
-   <img id="pic31" src="0.png" style="position:absolute; top:88px; left:114px"/>
-   <img id="pic41" src="0.png" style="position:absolute; top:88px; left:152px"/>
-   <img id="pic51" src="0.png" style="position:absolute; top:88px; left:190px"/>
-   <img id="pic12" src="0.png" style="position:absolute; top:126px; left:38px"/>
-   <img id="pic22" src="0.png" style="position:absolute; top:126px; left:76px"/>
-   <img id="pic32" src="0.png" style="position:absolute; top:126px; left:114px"/>
-   <img id="pic42" src="0.png" style="position:absolute; top:126px; left:152px"/>
-   <img id="pic52" src="0.png" style="position:absolute; top:126px; left:190px"/>
-   <img id="pic13" src="0.png" style="position:absolute; top:164px; left:38px"/>
-   <img id="pic23" src="0.png" style="position:absolute; top:164px; left:76px"/>
-   <img id="pic33" src="7.png" style="position:absolute; top:164px; left:114px"/>
-   <img id="pic43" src="0.png" style="position:absolute; top:164px; left:152px"/>
-   <img id="pic53" src="0.png" style="position:absolute; top:164px; left:190px"/>
-   <img id="pic14" src="0.png" style="position:absolute; top:202px; left:38px"/>
-   <img id="pic24" src="0.png" style="position:absolute; top:202px; left:76px"/>
-   <img id="pic34" src="0.png" style="position:absolute; top:202px; left:114px"/>
-   <img id="pic44" src="0.png" style="position:absolute; top:202px; left:152px"/>
-   <img id="pic54" src="0.png" style="position:absolute; top:202px; left:190px"/>
-   <img id="pic15" src="0.png" style="position:absolute; top:240px; left:38px"/>
-   <img id="pic25" src="0.png" style="position:absolute; top:240px; left:76px"/>
-   <img id="pic35" src="0.png" style="position:absolute; top:240px; left:114px"/>
-   <img id="pic45" src="0.png" style="position:absolute; top:240px; left:152px"/>
-   <img id="pic55" src="0.png" style="position:absolute; top:240px; left:190px"/>
-  </div>
-
-  <div id="label2" style="background-color:#ffaaaa; position:absolute; top:88px; left:260px; width:120; height:95">
-  </div>
-  <div id="label3" style="background-color:#aaffaa; position:absolute; top:200px; left:260px; width:120; height:25">
-  </div>
  </body>
 </html>
