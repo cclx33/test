@@ -99,7 +99,7 @@ function setlevel()
   player=1;
   win=0;
   moves=0;
-  steps=Math.floor((L-1)/100)+5; // 程ぶ˙计 
+  steps=Math.floor((L-1)/100)+3; // 程ぶ˙计 
   document.getElementById("bbb").innerHTML="level="+L+" <br>steps="+steps+" <br> use I J K L to move <br> 1~6 select actor";
 }
 
