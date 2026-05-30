@@ -1,16 +1,16 @@
-ï»¿//å¤ªç©ºæ¼«æ­¥2 é™³å•Ÿä» 2026/5/30 v3
+//¤ÓªÅº©¨B2 ³¯±Ò¤¯ 2026/5/30 v3
 
 var map=new Array;
 var px=new Array; // player position
 var py=new Array;
 
-var miniSteps, moves, timer, timer2, cnt
+var miniSteps, moves, timer, timer2, cnt;
 var info, playern, player, L=1;
 
 border();
 
 
-// éµç›¤ --------------------------------
+// Áä½L --------------------------------
 document.onkeydown=function(e)
 {
   if (window.event) e=window.event;
@@ -37,7 +37,7 @@ document.onkeydown=function(e)
 
 //------------------------------
 
-// n=0 é‡ç©æœ¬é—œ, n=1 ä¸‹ä¸€é—œ, n=-1 ä¸Šä¸€é—œ. n=2 é¸é—œ
+// n=0 ­«ª±¥»Ãö, n=1 ¤U¤@Ãö, n=-1 ¤W¤@Ãö. n=2 ¿ïÃö
 function gotoLevel(n)
 {
   L+=n;
@@ -45,7 +45,7 @@ function gotoLevel(n)
   setlevel();
 }
 
-// å¤–åœè¨­-1
+// ¥~³ò³]-1
 function border()
 {
   for (i=1; i<=5; i++)
@@ -57,19 +57,19 @@ function border()
   }
 }
 
-// æ›åœ–ç‰‡
+// ´«¹Ï¤ù
 function putPic(x,y,v)
 {
   document.getElementById("pic"+x+y).src=v+".png";
 }
 
-// é¡¯ç¤ºæœ¬é—œ------------------------
+// Åã¥Ü¥»Ãö------------------------
 function setlevel()
 {
   if (L<1) L=1;
   if (L>maxLevel) L=maxLevel;
 
-  // æ¸…ç©ºæ£‹ç›¤
+  // ²MªÅ´Ñ½L
   for (y=1; y<=5; y=y+1)
   {
     for (x=1; x<=5; x=x+1)
@@ -81,7 +81,7 @@ function setlevel()
     }
   }
 
-  // è®€å–æ£‹å­ä½ç½®xyï¼Œæ”¾ç½®æ£‹å­
+  // Åª¨ú´Ñ¤l¦ì¸mxy¡A©ñ¸m´Ñ¤l
   var x,y,v;
   playern=0;
   for (v=1; v<=6; v++)
@@ -89,7 +89,7 @@ function setlevel()
     var level$=level[L-1];  // ex. "412131224334"
     x=Number(level$[v*2-2]);
     y=Number(level$[v*2-1]);
-    px[v]=x; // ç´€éŒ„æ£‹å­ x,y
+    px[v]=x; // ¬ö¿ı´Ñ¤l x,y
     py[v]=y;
     if (x>0) { 
       map[x+7*y]=v;
@@ -103,16 +103,16 @@ function setlevel()
   moves=0;
   miniSteps=Math.floor((L-1)/100)+3;
 
-  info="ç¬¬ "+L+" é—œ <br>æœ€å°‘æ­¥æ•¸: "+miniSteps;
+  info="²Ä "+L+" Ãö <br>³Ì¤Ö¨B¼Æ: "+miniSteps;
   document.getElementById("label2").innerHTML=info;
-  clearInterval(timer2); // åœæ­¢ timer2
+  clearInterval(timer2); // °±¤î timer2
   cnt=0;
-  document.getElementById("label3").innerHTML="ç¶“é "+cnt+" ç§’";
-  // å•Ÿå‹• timer2 é–“éš”=1000 æ¯«ç§’
+  document.getElementById("label3").innerHTML="¸g¹L "+cnt+" ¬í";
+  // ±Ò°Ê timer2 ¶¡¹j=1000 ²@¬í
   timer2=setInterval("com2()",1000);
 }
 
-//------- ç§»å‹•æ£‹å­ ------------
+//------- ²¾°Ê´Ñ¤l ------------
 function move(xa,ya)
 {
   if (player>playern) player=1;
@@ -125,25 +125,25 @@ function move(xa,ya)
   x1=x+xa;
   y1=y+ya;
 
-  // æ—é‚Š
+  // ®ÇÃä
   if (map[x1+7*y1]==0)
   {
-    for(i=2; i<=5; i++) // å°‹æ‰¾é˜»æ“‹ç‰©
+    for(i=2; i<=5; i++) // ´M§äªı¾×ª«
     {
       x1+=xa;
       y1+=ya;
-      m2=map[x1+7*y1]
+      m2=map[x1+7*y1];
 
-      if (m2<0) break; // -1 å¤–åœ
+      if (m2<0) break; // -1 ¥~³ò
 
-      else if (m2>0) // é˜»æ“‹ç‰©
+      else if (m2>0) // ªı¾×ª«
       {
-        slideStep=i-1; // æ»‘è¡Œæ­¥
+        slideStep=i-1; // ·Æ¦æ¨B
         break;
       }
     }
 
-    // æ»‘è¡Œ
+    // ·Æ¦æ
     if (slideStep>0)
     {
       xnew=x+xa*slideStep;
@@ -155,20 +155,20 @@ function move(xa,ya)
       putPic(xnew,ynew,v);
 
       map[x+7*y]=0;
-      if (x==3 && y==3) putPic(x,y,7)
+      if (x==3 && y==3) putPic(x,y,7);
       else putPic(x,y,0);
 
       moves++;
-      var info1=" <br>ä½ èµ°äº† "+moves+" æ­¥";
+      var info1=" <br>§A¨«¤F "+moves+" ¨B";
       document.getElementById("label2").innerHTML=info+info1;
     }
   }
 
   if (map[3+7*3]==1)
   {
-    info1 += " <br>æ­å–œ éé—œäº†!";
+    info1 += " <br>®¥³ß ¹LÃö¤F!";
     document.getElementById("label2").innerHTML=info+info1;
-    clearInterval(timer2); // åœæ­¢ timer2
+    clearInterval(timer2); // °±¤î timer2
     delay(8);
   }
 }
@@ -176,11 +176,11 @@ function move(xa,ya)
 function delay(n)
 {
   cnt=n;
-  // å•Ÿå‹• timer é–“éš”=100 æ¯«ç§’
+  // ±Ò°Ê timer ¶¡¹j=100 ²@¬í
   timer=setInterval("com()",100);
 }
 
-// è¨ˆæ™‚å™¨ timer
+// ­p®É¾¹ timer
 function com()
 {
   cnt--;
@@ -189,13 +189,13 @@ function com()
     L++;
     setlevel();
 
-    clearInterval(timer); // åœæ­¢ timer
+    clearInterval(timer); // °±¤î timer
   }
 }
 
-// è¨ˆæ™‚å™¨2 timer2
+// ­p®É¾¹2 timer2
 function com2()
 {
   cnt++;
-  document.getElementById("label3").innerHTML="ç¶“é "+cnt+" ç§’";
+  document.getElementById("label3").innerHTML="¸g¹L "+cnt+" ¬í";
 }
