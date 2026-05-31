@@ -1,14 +1,14 @@
 ﻿<html>
  <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf8"/>
-  <title>太空漫步2c 陳啟仁</title>
-  <script type="text/javascript" src="lunarlockout3u.js">
+  <meta http-equiv="Content-Type" content="text/html; charset=big5"/>
+  <title>太空漫步v3 陳啟仁</title>
+  <script type="text/javascript" src="lunarlockout4.js">
   </script>
-  <script type="text/javascript" src="levels2u.js">
+  <script type="text/javascript" src="levels2.js">
   </script>
  </head>
  <body>
- 
+
   <div id="label2" style="background-color:#ffaaaa; position:absolute; top:1px; left:1px; width:190; height:25">
   </div>
   <div id="label3" style="background-color:#aaffaa; position:absolute; top:26px; left:1px; width:190; height:25">
@@ -47,30 +47,43 @@
     <tr height=35>
      <td>
       <input type="button" name="sub3" value="前關" onclick="gotoLevel(-1)"/>
-      <input type="button" name="sub6" value="上 I" onclick="move(0,-1)"/>
+      <input type="button" name="sub6" value="[上]" onclick="move(0,-1)"/>
       <input type="button" name="sub4" value="後關" onclick="gotoLevel(1)"/>
       <input type="button" name="num1" value="[X]" onclick="player=1"/>
-      <input type="button" name="num2" value="[2]" onclick="player=2"/>
-     </td>
-    </tr>
-    <tr>
-     <td>
-      <input type="button" name="sub7" value="左 J" onclick="move(-1,0)"/>
-      <input type="button" name="sub8" value="下 K" onclick="move(0,1)"/>
-      <input type="button" name="sub9" value="右 L" onclick="move(1,0)"/>
-      <input type="button" name="num3" value="[3]" onclick="player=3"/>
       <input type="button" name="num4" value="[4]" onclick="player=4"/>
      </td>
     </tr>
     <tr>
      <td>
-      <input type="button" name="sub2" value=" 重玩 A " onclick="gotoLevel(0)"/>
-      <input type="button" name="sub5" value=" 選關 S " onclick="gotoLevel(2)"/>
+      <input type="button" name="sub7" value="  [左]" onclick="move(-1,0)"/>
+      <input type="button" name="sub8" value="[下]" onclick="move(0,1)"/>
+      <input type="button" name="sub9" value="[右] " onclick="move(1,0)"/>
+      <input type="button" name="num2" value="[2]" onclick="player=2"/>
       <input type="button" name="num5" value="[5]" onclick="player=5"/>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <input type="button" name="sub2" value="[ 重 玩 ]" onclick="gotoLevel(0)"/>
+      <input type="button" name="sub5" value="[ 選 關 ] " onclick="gotoLevel(2)"/>
+      <input type="button" name="num3" value="[3]" onclick="player=3"/>
       <input type="button" name="num6" value="[6]" onclick="player=6"/>
      </td>
     </tr>
+    <tr>
+     <td>
+      <input type="button" name="sub2" value="[ 開 始 玩 ]" onclick="gotoLevel(0)"/>
+    </tr>
    </table>
   </form>
+  <div id="label4" style="background-color:#ccccff; position:absolute; top:360px; left:1px; width:210;">
+   按方向鍵，把X滑行到正中央<br/>
+   必須有阻礙物才可以滑行<br/>
+   1~100關是 3步的關卡<br/>
+   101~200關是 4步的關卡...<br/>
+   901~971關12步以上的關卡<br/>
+   有問題，建議或想要解答<br/>
+   請聯絡我<br/>
+  </div>
  </body>
 </html>
